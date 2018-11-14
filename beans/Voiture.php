@@ -20,15 +20,15 @@ class Voiture {
     private $prix;
     private $chev;
     private $type;
-    private static $accu=0;
+    private static $accu=1;
     
     function __construct($serie, $marque, $prix, $chev, $type) {
-        //Create table voiture if not exist
         $this->serie = $serie;
         $this->marque = $marque;
         $this->prix = $prix;
         $this->chev = $chev;
         $this->type = $type;
+        $id=$accu++;
     }
 
     function getSerie() {
