@@ -1,0 +1,57 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16 nov. 2018, 10:09:25
+    Author     : IE
+*/
+
+#form{
+    width:50%;
+    height: auto;
+    padding: 16px;
+    margin: auto;
+    box-shadow: 0 0 36px rgba(0,0,0,.5);
+    margin-top: 64px;
+    position: relative;
+}
+.input{
+    width: 90%;
+    height: 32px;
+    font-family: cursive;
+    text-indent: 8px;
+    outline-color: #0080FF;
+    margin-top: 8px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#sub{
+    width: 20%;
+    min-width: 128px;
+    max-width: 496px;
+    height: auto;
+    padding: 8px;
+    color: #FFFFFF;
+    background-color: #0080FF;
+    border: none;
+    margin-top: 8px;
+    margin-left: 40%;
+    margin-right: 40%;
+    position: relative;
+    cursor: pointer;
+}
+.Msg{
+    width: 100%;
+    height: auto;
+    
+}
+table{
+    width: 50%;
+    height: auto;
+    margin: auto;
+    box-shadow: 0 0 36px rgba(0,0,0,.5);
+    margin-top: 64px;
+    position: relative;
+}

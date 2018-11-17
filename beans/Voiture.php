@@ -11,28 +11,25 @@
  *
  * @author IE
  */
-chdir("../");
-include_once 'connexion/Connexion.php';
 class Voiture {
     private $id;
     private $serie;
     private $marque;
     private $prix;
-    private $chev;
+    private $puissance;
     private $type;
-    private static $accu=0;
     
-    function __construct($serie, $marque, $prix, $chev, $type) {
-        //Create table voiture if not exist
+    function __construct($id,$serie, $marque, $prix, $puissance, $type) {
+        $this->id=$id;
         $this->serie = $serie;
         $this->marque = $marque;
         $this->prix = $prix;
-        $this->chev = $chev;
+        $this->puissance = $puissance;
         $this->type = $type;
     }
 
-    function getSerie() {
-        return $this->serie;
+    function getId() {
+        return $this->id;
     }
 
     function getMarque() {
@@ -42,15 +39,18 @@ class Voiture {
     function getPrix() {
         return $this->prix;
     }
+    function getSerie() {
+        return $this->serie;
+    }
 
-    function getChev() {
-        return $this->chev;
+    function getPuissance() {
+        return $this->puissance;
     }
 
     function getType() {
         return $this->type;
     }
-
+    
     function setSerie($serie) {
         $this->serie = $serie;
     }
@@ -63,16 +63,12 @@ class Voiture {
         $this->prix = $prix;
     }
 
-    function setChev($chev) {
-        $this->chev = $chev;
+    function setPuissance($puissance) {
+        $this->puissance = $puissance;
     }
 
     function setType($type) {
         $this->type = $type;
-    }
-
-    function getId() {
-        return $this->id;
     }
 
 
