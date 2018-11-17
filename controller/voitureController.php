@@ -24,4 +24,4 @@ else if($ops=="update"){
     $v = new Voiture($id,"N","N","N","N","N");
     $vs->delete($v);
 }
-header("Location:../index.php");
+header("Location:../indexVoiture.php");
