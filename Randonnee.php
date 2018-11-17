@@ -38,22 +38,15 @@ include_once 'service/RandonneeService.php';
                     <tr>
                         <td>Prix : </td>
                         <td><input id="prix" type="text" name="prix" value="" /></td>
-                        
-                        
                     </tr>
                     
                     <tr>
-                        
                         <td>Date Nombre de participants : </td>
                         <td><input id="nbParticipants" type="text" name="nombre_participants" value="" /></td>
                         <td></td>
                         <td></td>
                         <td><input id="save" type="submit" value="Ajouter" /></td>
-                        
-                    </tr>
-                    
-                    
-                    </tr>
+                    </tr></tr>
                 </table>
 
             </fieldset>
@@ -79,7 +72,6 @@ include_once 'service/RandonneeService.php';
                     <?php
                     $Rs = new RandonneeService();
                     
-                     
                     foreach ($Rs->findAll() as $v) {
                         ?>
                         <tr>
@@ -93,12 +85,10 @@ include_once 'service/RandonneeService.php';
                             <td><button onclick="f(<?php echo $v->getId(); ?>, '<?php echo $v->getDirection(); ?>', '<?php echo $v->getDateDepart(); ?>', '<?php echo $v->getDateRetour(); ?>', '<?php echo $v->getPrix(); ?>', '<?php echo $v->getNombre_participants(); ?>');">Update</button></td>
                         </tr>
                         <?php
-                    
                     }
                     ?>
                 </tbody>
             </table>
-
         </fieldset>
 </body>
 </html>
