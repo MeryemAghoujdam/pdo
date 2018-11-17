@@ -2,7 +2,7 @@
 
     include_once 'dao/IDao.php';
     include_once 'beans/Stagiaire.php';
-    include_once 'connexion/Connexion.php';
+    include_once 'connexion/sConnexion.php';
     
 class StagiaireService implements IDao {
     private $connexion;
