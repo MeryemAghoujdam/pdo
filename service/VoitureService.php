@@ -11,7 +11,7 @@
  *
  * @author IE
  */
-include_once 'beans/Marque.php';
+include_once 'beans/Voiture.php';
 include_once 'connexion/Connexion.php';
 include_once 'dao/IDao.php';
 class VoitureService implements IDao {
@@ -32,17 +32,18 @@ class VoitureService implements IDao {
     }
 
     public function delete($o) {
-        $query = "Delet from voiture where id=?";
-        $req= $this->connexion->getConnexion()->prepare($query);
-        $req->execute(array($o->getId())) or die("ERROR, delete");
+        $query = "DELETE FROM voiture WHERE id = ?";
+        $req = $this->connexion->getConnexion()->prepare($query);
+        $req->execute(array($o->getId())) or die("erreur delete");
     }
 
     public function findAll() {
         $query = "select * from voiture";
         $req = $this->connexion->getConnexion()->query($query);
         $Vs= $req->fetchAll(PDO::FETCH_OBJ);
+        $voitures = array();
         foreach ($Vs as $v){
-             $voitures [] = new Marque($v->id,$v->nom);
+             $voitures [] = new Voiture($v->id,$v->serie,$v->marque,$v->prix,$v->puissance,$v->type);
         }
         return $voitures;
         
@@ -52,7 +53,7 @@ class VoitureService implements IDao {
         $query = "select * from voiture where id=?";
         $req = $this->connexion->getConnexion()->query($query);
         $v= $req->fetchAll(PDO::FETCH_OBJ);
-        $voiture = new Voiture($v->id,$v->serie,$v->marque);
+        $voiture = new Voiture($v->id,$v->serie,$v->marque,$v->prix,$v->puissance,$v->type);
         return $voiture;
     }
 

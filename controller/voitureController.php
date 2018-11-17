@@ -12,13 +12,16 @@ include_once 'beans/Voiture.php';
 extract($_GET);
 
 $vs = new VoitureService();
-$v = new Voiture(0,serie,$marque,$prix,$puissance,$type);
+
 if($ops == "insert"){
+    $v = new Voiture(0,$serie,$marque,$prix,$puissance,$type);
     $vs->create($v);
 }
 else if($ops=="update"){
-    
+    $v = new Voiture($id,$serie,$marque,$prix,$puissance,$type);
+    $vs->update($v);
 }else{
-    
+    $v = new Voiture($id,"N","N","N","N","N");
+    $vs->delete($v);
 }
 header("Location:../index.php");
