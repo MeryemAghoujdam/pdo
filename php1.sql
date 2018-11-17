@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  sam. 17 nov. 2018 à 15:36
+-- Généré le :  sam. 17 nov. 2018 à 15:51
 -- Version du serveur :  10.1.36-MariaDB
--- Version de PHP :  7.2.11
+-- Version de PHP :  7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,28 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `php1`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `employe`
+--
+
+CREATE TABLE `employe` (
+  `id` int(11) NOT NULL,
+  `cin` varchar(10) DEFAULT NULL,
+  `nom` varchar(30) DEFAULT NULL,
+  `prenom` varchar(30) DEFAULT NULL,
+  `tele` varchar(30) DEFAULT NULL,
+  `salaire` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `employe`
+--
+
+INSERT INTO `employe` (`id`, `cin`, `nom`, `prenom`, `tele`, `salaire`) VALUES
+(2, 'EE1414', 'BOUSHAB', 'ZINAB', '0632563246', 632563246);
 
 -- --------------------------------------------------------
 
@@ -77,31 +99,15 @@ INSERT INTO `marque` (`id`, `nom`) VALUES
 (24, 'aa'),
 (25, 'aa');
 
--- --------------------------------------------------------
-
---
--- Structure de la table `randonnee`
---
-
-CREATE TABLE `randonnee` (
-  `id` int(11) NOT NULL,
-  `direction` varchar(50) NOT NULL,
-  `dateDepart` date NOT NULL,
-  `dateRetour` date NOT NULL,
-  `prix` float NOT NULL,
-  `nombre_participants` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `randonnee`
---
-
-INSERT INTO `randonnee` (`id`, `direction`, `dateDepart`, `dateRetour`, `prix`, `nombre_participants`) VALUES
-(1, 'Toubqal', '2018-11-17', '2018-11-19', 1300, 21);
-
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `employe`
+--
+ALTER TABLE `employe`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `machine`
@@ -117,14 +123,14 @@ ALTER TABLE `marque`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `randonnee`
---
-ALTER TABLE `randonnee`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT pour les tables déchargées
 --
+
+--
+-- AUTO_INCREMENT pour la table `employe`
+--
+ALTER TABLE `employe`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `machine`
@@ -137,12 +143,6 @@ ALTER TABLE `machine`
 --
 ALTER TABLE `marque`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT pour la table `randonnee`
---
-ALTER TABLE `randonnee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Contraintes pour les tables déchargées
