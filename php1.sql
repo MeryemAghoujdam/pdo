@@ -68,7 +68,19 @@ CREATE TABLE `marque` (
   `id` int(11) NOT NULL,
   `nom` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `livre`
+--
+CREATE TABLE `livre` (
+  `id` int(11) NOT NULL,
+  `titre` varchar(100) NOT NULL,
+     `nbpage` int NOT NULL ,
+     `auteur` varchar(100)NOT NULL,
+      `prix` float NOT NULL 
+ 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --
 -- Déchargement des données de la table `marque`
 --
@@ -98,6 +110,11 @@ INSERT INTO `marque` (`id`, `nom`) VALUES
 (23, 'aa'),
 (24, 'aa'),
 (25, 'aa');
+-- Déchargement des données de la table `livre`
+INSERT INTO `marque` (`id`, `nom`) VALUES
+(2, 't1',100,'A1',1876),
+(3, 't2',200,'A2',1098),
+(4, 't3',300,'A3',1092),
 
 --
 -- Index pour les tables déchargées
@@ -117,11 +134,15 @@ ALTER TABLE `machine`
   ADD KEY `marque` (`marque`);
 
 --
+-- Index pour la table `livre`
+--
+ALTER TABLE `livre`
+  ADD PRIMARY KEY (`id`);
+--
 -- Index pour la table `marque`
 --
 ALTER TABLE `marque`
   ADD PRIMARY KEY (`id`);
-
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
@@ -144,6 +165,10 @@ ALTER TABLE `machine`
 ALTER TABLE `marque`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
+--- AUTO_INCREMENT pour la table `livre`
+--
+ALTER TABLE `livre`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Contraintes pour les tables déchargées
 --
