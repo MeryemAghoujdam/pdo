@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  sam. 17 nov. 2018 à 15:51
--- Version du serveur :  10.1.36-MariaDB
--- Version de PHP :  7.2.10
+-- Généré le :  mar. 30 oct. 2018 à 15:27
+-- Version du serveur :  10.1.35-MariaDB
+-- Version de PHP :  7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,28 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `php1`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `employe`
---
-
-CREATE TABLE `employe` (
-  `id` int(11) NOT NULL,
-  `cin` varchar(10) DEFAULT NULL,
-  `nom` varchar(30) DEFAULT NULL,
-  `prenom` varchar(30) DEFAULT NULL,
-  `tele` varchar(30) DEFAULT NULL,
-  `salaire` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `employe`
---
-
-INSERT INTO `employe` (`id`, `cin`, `nom`, `prenom`, `tele`, `salaire`) VALUES
-(2, 'EE1414', 'BOUSHAB', 'ZINAB', '0632563246', 632563246);
 
 -- --------------------------------------------------------
 
@@ -68,19 +46,7 @@ CREATE TABLE `marque` (
   `id` int(11) NOT NULL,
   `nom` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- --------------------------------------------------------
 
---
--- Structure de la table `livre`
---
-CREATE TABLE `livre` (
-  `id` int(11) NOT NULL,
-  `titre` varchar(100) NOT NULL,
-     `nbpage` int NOT NULL ,
-     `auteur` varchar(100)NOT NULL,
-      `prix` float NOT NULL 
- 
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --
 -- Déchargement des données de la table `marque`
 --
@@ -110,21 +76,10 @@ INSERT INTO `marque` (`id`, `nom`) VALUES
 (23, 'aa'),
 (24, 'aa'),
 (25, 'aa');
--- Déchargement des données de la table `livre`
-INSERT INTO `marque` (`id`, `nom`) VALUES
-(2, 't1',100,'A1',1876),
-(3, 't2',200,'A2',1098),
-(4, 't3',300,'A3',1092),
 
 --
 -- Index pour les tables déchargées
 --
-
---
--- Index pour la table `employe`
---
-ALTER TABLE `employe`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `machine`
@@ -134,24 +89,14 @@ ALTER TABLE `machine`
   ADD KEY `marque` (`marque`);
 
 --
--- Index pour la table `livre`
---
-ALTER TABLE `livre`
-  ADD PRIMARY KEY (`id`);
---
 -- Index pour la table `marque`
 --
 ALTER TABLE `marque`
   ADD PRIMARY KEY (`id`);
+
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
-
---
--- AUTO_INCREMENT pour la table `employe`
---
-ALTER TABLE `employe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `machine`
@@ -165,10 +110,6 @@ ALTER TABLE `machine`
 ALTER TABLE `marque`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
---- AUTO_INCREMENT pour la table `livre`
---
-ALTER TABLE `livre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Contraintes pour les tables déchargées
 --
@@ -178,6 +119,84 @@ ALTER TABLE `livre`
 --
 ALTER TABLE `machine`
   ADD CONSTRAINT `fk_machine_marche` FOREIGN KEY (`marque`) REFERENCES `marque` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- --------------------[TABLE : Profil] ------------------------------
+
+--
+-- Structure de la table `profil`
+--
+
+CREATE TABLE `profil` (
+  `id` int(11) NOT NULL,
+  `code` varchar(15) NOT NULL,
+  `libelle` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `profil`
+--
+ALTER TABLE `profil`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `profil`
+--
+ALTER TABLE `profil`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- --------------------[TABLE : Stagiaire] ------------------------------
+
+
+CREATE TABLE `stagiaire` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(30) NOT NULL,`prenom` varchar(30) NOT NULL,`daten` date NOT NULL,`tele` varchar(10) NOT NULL,`email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `stagiaire`
+--
+
+INSERT INTO `stagiaire` (`id`, `nom`, `prenom`, `daten`, `tele`, `email`) VALUES
+(7, 'Waziz', 'Moussaab', '1997-02-20', '0687862800', 'moussaabwaziz@gmail.com'),
+(8, 'Nadifi', 'Soufiane', '1999-12-03', '0666085943', 'iamsoufian@gmail.com');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `stagiaire`
+--
+ALTER TABLE `stagiaire`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `stagiaire`
+--
+ALTER TABLE `stagiaire`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

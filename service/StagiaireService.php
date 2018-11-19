@@ -2,13 +2,16 @@
 
     include_once 'dao/IDao.php';
     include_once 'beans/Stagiaire.php';
-    include_once 'connexion/sConnexion.php';
+    include_once 'connexion/Connexion.php';
     
 class StagiaireService implements IDao {
     private $connexion;
     
     function __construct() {
         $this->connexion = new Connexion();
+        $query="CREATE TABLE if NOT EXISTS stagiaire (id int PRIMARY key AUTO_INCREMENT,nom varchar(30) NOT NULL,prenom varchar(30) NOT NULL,daten date NOT NULL,tele varchar(10) NOT NULL,email varchar(50) NOT NULL)";
+        $req = $this->connexion->getConnexion()->prepare($query);
+        $req->execute() or die("Connexion Erreur");
     }
     
     public function create($o) {

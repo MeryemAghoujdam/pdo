@@ -22,7 +22,7 @@
 }
 
 
-input[type=text],[type=date],[type=number],[type=email], select {
+input[type=text],[type=date],[type=number],[type=email],[type=password], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

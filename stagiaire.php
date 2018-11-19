@@ -10,7 +10,7 @@ include_once 'service/StagiaireService.php';
     <title>Gestion des stagiaires</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-    <script src="script/stagiaire.js"></script>
+    <script src="script/script.js"></script>
 </head>
 <body>
     <body>
@@ -80,7 +80,7 @@ include_once 'service/StagiaireService.php';
                             <td><?php echo $v->getTele(); ?></td>
                             <td><?php echo $v->getEmail(); ?></td>                                                    
                             <td><a href="controller/GestionStagiaire.php?op=delete&id=<?php echo $v->getId(); ?>">Supprimer</a></td>
-                            <td><button onclick="f(<?php echo $v->getId(); ?>, '<?php echo $v->getNom(); ?>', '<?php echo $v->getPrenom(); ?>', '<?php echo $v->getDaten(); ?>', '<?php echo $v->getTele(); ?>', '<?php echo $v->getEmail(); ?>');">Update</button></td>
+                            <td><button onclick="stagiaireModification(<?php echo $v->getId(); ?>, '<?php echo $v->getNom(); ?>', '<?php echo $v->getPrenom(); ?>', '<?php echo $v->getDaten(); ?>', '<?php echo $v->getTele(); ?>', '<?php echo $v->getEmail(); ?>');">Update</button></td>
                         </tr>
                         <?php
                     }
