@@ -34,6 +34,13 @@ class MarqueService implements IDao {
         }
         return $marques;
     }
+    
+    public function findAllApi() {
+        $query = "select * from Marque";
+        $req = $this->connexion->getConnexion()->query($query);
+        $m= $req->fetchAll(PDO::FETCH_OBJ);
+        return $m;
+    }
 
     public function findById($id) {
         $query = "select * from Marque where id =?";

@@ -1,8 +1,10 @@
 <?php
+chdir('..');
+include_once 'service/MarqueService.php';
+extract($_GET);
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+$ms = new MarqueService();
 
+$ms->create(new Marque(0, $nom));
+
+echo 'True';
