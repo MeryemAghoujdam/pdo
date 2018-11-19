@@ -64,3 +64,25 @@ function profilModification(_id,_libelle,_code) {
 }
 
 
+function gestionRestaurant(_id,_nom,_nbrtable,_adresse,_tele,_nbretoile) {
+    var legend = document.getElementById("legend1");
+    legend.innerText = "Modifier Restaurant";
+    var op = document.getElementById("op");
+    op.value = "update";
+    var id = document.getElementById("num");
+    id.value = _id;
+    var nom = document.getElementById("nom");
+    nom.value = _nom;
+    var nbrtable = document.getElementById("nbrtable");
+    nbrtable.value = _nbrtable;
+    var tele = document.getElementById("tele");
+    tele.value = _tele;
+    var adresse = document.getElementById("adresse");
+    adresse.value = _adresse;
+    var nbretoile = document.getElementById("nbretoile");
+    nbretoile.value = _nbretoile;
+    
+    var save = document.getElementById("save");
+    save.value ="Modifier";
+   
+}
