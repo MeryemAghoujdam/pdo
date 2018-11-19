@@ -16,11 +16,6 @@ include_once 'service/EmployeService.php';
         <title>Gestion des Employes</title>
     </head>
     <body>
-        <?php 
-        include_once 'menu.php';
-        ?>
-        <div style="margin-left:20%;padding:1px 16px;height:1000px;">
-
         <form method="GET" action="controller/GestionEmploye.php" >
             <fieldset>
                 <legend id="legend1">Ajouter Employe</legend>
@@ -99,6 +94,6 @@ include_once 'service/EmployeService.php';
                 </tbody>
             </table>
         </fieldset>
-        </div>
+
     </body>
 </html>

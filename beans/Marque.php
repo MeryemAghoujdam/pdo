@@ -37,7 +37,7 @@ class Marque {
     }
 
     public function __toString() {
-        return $this->id." ".$this->nom;
+        return $this->nom;
     }
 
 
