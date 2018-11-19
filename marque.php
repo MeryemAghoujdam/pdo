@@ -16,55 +16,62 @@ include_once 'service/MarqueService.php';
         <title>Gestion des marques</title>
     </head>
     <body>
-        <form method="GET" action="controller/addMarque.php">
-            <fieldset>
-                <legend>Ajouter Marque</legend>
-                <table border="0">
-                    <input id="op" type="hidden" name="op" value="add" />
-                    <input id="num" type="hidden" name="id" value="" />
-                    <tr>
-                        <td>Nom : </td>
-                        <td><input id="nom" type="text" name="nom" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input id="save" type="submit" value="Ajouter" /></td>
-                    </tr>
+        <?php
+        include_once 'menu.php';
+        ?>
+        <div style="margin-left:20%;padding:1px 16px;height:1000px;">
 
+
+            <form method="GET" action="controller/addMarque.php">
+                <fieldset>
+                    <legend>Ajouter Marque</legend>
+                    <table border="0">
+                        <input id="op" type="hidden" name="op" value="add" />
+                        <input id="num" type="hidden" name="id" value="" />
+                        <tr>
+                            <td>Nom : </td>
+                            <td><input id="nom" type="text" name="nom" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input id="save" type="submit" value="Ajouter" /></td>
+                        </tr>
+
+                    </table>
+
+                </fieldset>
+            </form>
+
+            <fieldset>
+                <legend>Liste des marques</legend>
+
+                <table id="customers" border="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nom</th>
+                            <th>Supprimer</th>
+                            <th>Modifier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $ms = new MarqueService();
+                        foreach ($ms->findAll() as $v) {
+                            ?>
+                            <tr>
+                                <td><?php echo $v->getId(); ?></td>
+                                <td><?php echo $v->getNom(); ?></td>
+                                <td><a href="controller/deleteMarque.php?id=<?php echo $v->getId(); ?>">Supprimer</a></td>
+                                <td><button onclick="f(<?php echo $v->getId(); ?>, '<?php echo $v->getNom(); ?>');">Update</button></td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                    </tbody>
                 </table>
 
             </fieldset>
-        </form>
-
-        <fieldset>
-            <legend>Liste des marques</legend>
-
-            <table id="customers" border="0">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Nom</th>
-                        <th>Supprimer</th>
-                        <th>Modifier</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $ms = new MarqueService();
-                    foreach ($ms->findAll() as $v) {
-                        ?>
-                        <tr>
-                            <td><?php echo $v->getId(); ?></td>
-                            <td><?php echo $v->getNom(); ?></td>
-                            <td><a href="controller/deleteMarque.php?id=<?php echo $v->getId(); ?>">Supprimer</a></td>
-                            <td><button onclick="f(<?php echo $v->getId(); ?>, '<?php echo $v->getNom(); ?>');">Update</button></td>
-                        </tr>
-                        <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
-
-        </fieldset>
+        </div>
     </body>
 </html>

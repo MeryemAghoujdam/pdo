@@ -7,5 +7,5 @@ header('Content-type: application/json');
 
 $ms = new MarqueService();
 
-json_encode($ms->findAllApi());
+echo json_encode($ms->findAllApi());
 
