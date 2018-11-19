@@ -16,7 +16,11 @@ include_once 'service/ClientService.php';
         <title>Gestion des Clients </title>
     </head>
     <body>
-         
+          <?php 
+        include_once 'menu.php';
+        ?>
+        <div style="margin-left:20%;padding:1px 16px;height:1000px;">
+
         <form method="GET" action="controller/GestionClient.php"  >
             
             <fieldset>
@@ -100,6 +104,6 @@ include_once 'service/ClientService.php';
                 </tbody>
             </table>
         </fieldset>
-
+        </div>
     </body>
 </html>
