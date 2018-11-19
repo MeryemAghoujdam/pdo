@@ -1,7 +1,6 @@
 
 function f(a, b) {
 
-
     var nom = document.getElementById("nom");
     nom.value = b;
     var op = document.getElementById("op");

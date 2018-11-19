@@ -12,70 +12,75 @@ include_once 'service/HotelService.php';
         <script src="script/Hotel.js"></script>
     </head>
     <body>
-        <form method="GET" action="controller/GestionHotel.php">
+        <?php 
+        include_once 'menu.php';
+        ?>
+        <div style="margin-left:20%;padding:1px 16px;height:1000px;">
+
+            <form method="GET" action="controller/GestionHotel.php">
+                <fieldset>
+                    <legend id="legend1">Ajouter Locataire</legend>
+                    <table id="gestion" border="0">
+                        <input id="op" type="hidden" name="op" value="add" />
+                        <input id="num" type="hidden" name="id" value="" />
+                        <tr>
+                            <td>Client : </td>
+                            <td><input id="client" type="text" name="client" value="" /></td>
+                            <td></td>
+                            <td>Numero de Chambre : </td>
+                            <td><input id="numC" type="text" name="numC" value="" /></td>
+                            <td>Nombre des Jours: </td>
+                            <td><input id="nbrJ" type="text" name="nbrJ" value="" /></td>
+                            <td></td>
+                            <td>Prix : </td>
+                            <td><input id="prix" type="text" name="prix" value="" /></td>
+                            <td></td>
+                            <td></td>
+                            <td><input id="save" type="submit" value="Ajouter" /></td>
+                        </tr>
+                    </table>
+
+                </fieldset>
+            </form>
+
             <fieldset>
-                <legend id="legend1">Ajouter Locataire</legend>
-                <table id="gestion" border="0">
-                    <input id="op" type="hidden" name="op" value="add" />
-                    <input id="num" type="hidden" name="id" value="" />
-                    <tr>
-                        <td>Client : </td>
-                        <td><input id="client" type="text" name="client" value="" /></td>
-                        <td></td>
-                        <td>Numero de Chambre : </td>
-                        <td><input id="numC" type="text" name="numC" value="" /></td>
-                        <td>Nombre des Jours: </td>
-                        <td><input id="nbrJ" type="text" name="nbrJ" value="" /></td>
-                        <td></td>
-                        <td>Prix : </td>
-                        <td><input id="prix" type="text" name="prix" value="" /></td>
-                        <td></td>
-                        <td></td>
-                        <td><input id="save" type="submit" value="Ajouter" /></td>
-                    </tr>
+                <legend>Liste des locataires</legend>
+
+                <table id="customers" border="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Client</th>
+                            <th>Numero de Chambre</th>
+                            <th>Nombre des Jours</th>
+                            <th>Prix</th>
+                            <th>Supprimer</th>
+                            <th>Modifier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $s = new HotelService();
+                        if ($s->findAll() != 0) {
+                            foreach ($s->findAll() as $v) {
+                                ?>
+                                <tr>
+                                    <td><?php echo $v->getId(); ?></td>
+                                    <td><?php echo $v->getClient(); ?></td>
+                                    <td><?php echo $v->getNumChambre(); ?></td>
+                                    <td><?php echo $v->getNbrJours(); ?></td>
+                                    <td><?php echo $v->getPrix(); ?></td>                                                 
+                                    <td><a href="controller/GestionHotel.php?op=delete&id=<?php echo $v->getId(); ?>">Supprimer</a></td>
+                                    <td><button onclick="Hotel(<?php echo $v->getId(); ?>, '<?php echo $v->getClient(); ?>', '<?php echo $v->getNumChambre(); ?>', '<?php echo $v->getNbrJours(); ?>', '<?php echo $v->getPrix(); ?>');">Update</button></td>
+                                </tr>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </tbody>
                 </table>
 
             </fieldset>
-        </form>
-
-        <fieldset>
-            <legend>Liste des locataires</legend>
-
-            <table id="customers" border="0">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Client</th>
-                        <th>Numero de Chambre</th>
-                        <th>Nombre des Jours</th>
-                        <th>Prix</th>
-                        <th>Supprimer</th>
-                        <th>Modifier</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $s = new HotelService();                   
-                    if($s->findAll()!=0)
-                    {                       
-                    foreach ($s->findAll() as $v) {
-                        ?>
-                        <tr>
-                            <td><?php echo $v->getId(); ?></td>
-                            <td><?php echo $v->getClient(); ?></td>
-                            <td><?php echo $v->getNumChambre(); ?></td>
-                            <td><?php echo $v->getNbrJours(); ?></td>
-                            <td><?php echo $v->getPrix(); ?></td>                                                 
-                            <td><a href="controller/GestionHotel.php?op=delete&id=<?php echo $v->getId(); ?>">Supprimer</a></td>
-                            <td><button onclick="Hotel(<?php echo $v->getId(); ?>, '<?php echo $v->getClient(); ?>', '<?php echo $v->getNumChambre(); ?>', '<?php echo $v->getNbrJours(); ?>', '<?php echo $v->getPrix(); ?>');">Update</button></td>
-                        </tr>
-                        <?php
-                    }
-                    }
-                    ?>
-                </tbody>
-            </table>
-
-        </fieldset>
+        </div>
     </body>
 </html>
