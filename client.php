@@ -14,6 +14,8 @@ include_once 'service/ClientService.php';
         <script src="script/client.js" type="text/javascript"></script>
 
         <title>Gestion des Clients </title>
+        
+        
     </head>
     <body>
           <?php 
@@ -31,18 +33,18 @@ include_once 'service/ClientService.php';
                     <input id="num" type="hidden" name="id" value="" />
 
                     <tr>
-                        <td >Cin : </td>
-                        <td ><input id="cin" type="text" name="cin" value=""placeholder="Tapes votre cin" /></td>
+                        <td >  Cin : </td>
+                        <td ><input id="cin" type="text" name="cin" value=""placeholder="Tapez votre cin" /></td>
                         <td></td>
                          <td>Ville : </td>
-                        <td><input id="ville" type="text" name="ville" value="" placeholder="Tapes votre ville" /></td>
+                        <td><input id="ville" type="text" name="ville" value="" placeholder="Tapez votre ville" /></td>
                     </tr>
                     <tr>
                         <td>Nom : </td>
-                        <td><input id="nom" type="text" name="nom" value="" placeholder="Tapes votre nom" /></td>
+                        <td><input id="nom" type="text" name="nom" value="" placeholder="Tapez votre nom" /></td>
                         <td></td>
                          <td>Telephon : </td>
-                         <td><input id="tele" type="number" name="tele" value="" placeholder="+262 00000000" /></td>
+                         <td><input id="tele" type="number" name="tele" value="" placeholder="+262 00 000 00 00" /></td>
                         <td></td>
                     </tr>
 
@@ -50,7 +52,7 @@ include_once 'service/ClientService.php';
                        
                          
                          <td>Prenom : </td>
-                        <td><input id="prenom" type="text" name="prenom" value=""placeholder="Tapes votre prenom"  /></td>
+                        <td><input id="prenom" type="text" name="prenom" value=""placeholder="Tapez votre prenom"  /></td>
                         <td></td>
                         <td></td>
                         <td><input id="save" type="submit" value="Ajouter" /></td>
