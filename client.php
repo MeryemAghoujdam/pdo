@@ -44,7 +44,7 @@ include_once 'service/ClientService.php';
                         <td><input id="nom" type="text" name="nom" value="" placeholder="Tapez votre nom" /></td>
                         <td></td>
                          <td>Telephon : </td>
-                         <td><input id="tele" type="number" name="tele" value="" placeholder="+262 00 000 00 00" /></td>
+                         <td><input id="tele" type="text" name="tele" value="" placeholder="+262 00 000 00 00" /></td>
                         <td></td>
                     </tr>
 
