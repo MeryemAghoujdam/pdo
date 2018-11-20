@@ -248,6 +248,50 @@ ALTER TABLE `machine`
   ADD CONSTRAINT `fk_machine_marche` FOREIGN KEY (`marque`) REFERENCES `marque` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
+
+--
+-- Structure de la table `tournoi`
+--
+
+CREATE TABLE `tournoi` (
+  `id` int(11) NOT NULL,
+  `typetournoi` varchar(30) NOT NULL,
+  `nomjoueur` varchar(30) NOT NULL,
+  `prenomjoueur` varchar(30) NOT NULL,
+  `datetournoi` date NOT NULL,
+  `score` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `tournoi`
+--
+
+INSERT INTO `tournoi` (`id`, `typetournoi`, `nomjoueur`, `prenomjoueur`, `datetournoi`, `score`) VALUES
+(1, 'sportif', 'Labzioui', 'Amine', '2018-11-02', 50);
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `tournoi`
+--
+ALTER TABLE `tournoi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `tournoi`
+--
+ALTER TABLE `tournoi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

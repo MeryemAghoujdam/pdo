@@ -18,6 +18,30 @@ function f(a, b) {
 }
 
 
+function gestiontournoiup(idt,typ,nm,prm,dt,scr) {
+    var id=document.getElementById("idtourn");
+    
+    id.value=idt;
+   
+    var tp=document.getElementById("typrtr");
+    tp.value=typ;
+    var nom=document.getElementById("nomjr");
+    nom.value=nm;
+    var prenom=document.getElementById("prenomjr");
+    prenom.value=prm;
+    var dttrn=document.getElementById("datetournoi");
+    dttrn.value=dt;
+    var scor=document.getElementById("score");
+    scor.value=scr;
+    
+    var btn=document.getElementById("submit");
+    btn.value="Modifie";
+    var legend = document.getElementById("legend1");
+    legend.innerText = "Modifier Stagiaire";
+    
+}
+
+
 function stagiaireModification(_id,_nom,_prenom,_daten,_tele,_email) {
     var legend = document.getElementById("legend1");
     legend.innerText = "Modifier Stagiaire";
