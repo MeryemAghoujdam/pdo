@@ -30,25 +30,26 @@ include_once 'service/EmployeService.php';
 
                         <tr>
                             <td>Cin : </td>
-                            <td><input id="cin" type="text" name="cin" value="" /></td>
+                            <td><input id="cin" type="text" name="cin" value="" placeholder="Tapez votre le cin svp" /></td>
                             <td></td>
-                            <td>Nom : </td>
-                            <td><input id="nom" type="text" name="nom" value="" /></td>
-                            <td></td>
-                            <td>Prenom : </td>
-                            <td><input id="prenom" type="text" name="prenom" value="" /></td>
+                            <td>Telephon : </td>
+                            <td><input id="tele" type="text" name="tele" value="" placeholder="+212 00 000 00 00"/></td>
+                           
 
                         </tr>
 
                         <tr>
-
-                            <td>Telephon : </td>
-                            <td><input id="tele" type="text" name="tele" value="" /></td>
+                            <td>Nom : </td>
+                            <td><input id="nom" type="text" name="nom" value="" placeholder="Tapez votre le nom svp"/></td>
+                            <td></td>
+                            <td>Prenom : </td>
+                            <td><input id="prenom" type="text" name="prenom" value="" placeholder="Tapez votre le prenom svp"/></td>
+                            
                         </tr>
 
                         <tr>
                             <td>Salaire : </td>
-                            <td><input id="salaire" type="text" name="salaire" value="" /></td>
+                            <td><input id="salaire" type="number" name="salaire" value="" placeholder="DH" /></td>
                             <td></td>
                             <td></td>
                             <td><input id="save" type="submit" value="Ajouter" /></td>
