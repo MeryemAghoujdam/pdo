@@ -2,7 +2,7 @@
 
     include_once 'dao/IDao.php';
     include_once 'beans/Hotel.php';
-    include_once 'connexion/hotelConnexion.php';
+    include_once 'connexion/Connexion.php';
 class HotelService implements IDao {
     private $connexion;
     function __construct() {
