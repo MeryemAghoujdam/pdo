@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 19 nov. 2018 à 23:52
+-- Généré le :  mar. 20 nov. 2018 à 21:50
 -- Version du serveur :  10.1.36-MariaDB
 -- Version de PHP :  7.2.11
 
@@ -21,6 +21,21 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `php1`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `immeuble`
+--
+
+CREATE TABLE `immeuble` (
+  `id` int(11) NOT NULL,
+  `Adresse` varchar(100) NOT NULL,
+  `Nombre d'appartement` int(11) NOT NULL,
+  `Nom de propriétaire` varchar(100) NOT NULL,
+  `L'entreprise de construction` varchar(100) NOT NULL,
+  `date de Construction` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -159,6 +174,12 @@ INSERT INTO `stagiaire` (`id`, `nom`, `prenom`, `daten`, `tele`, `email`) VALUES
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `immeuble`
+--
+ALTER TABLE `immeuble`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `machine`
