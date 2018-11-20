@@ -9,6 +9,7 @@
     <li><a href="indexEcole.php">Gestion des ecoles</a></li> 
     <li><a href="module.php">Gestion des modules</a></li>
     <li><a href="indexFormation.php">Gestion des formations</a></li> 
+    <li><a href="hotel.php">Gestion des Hotel</a></li>
  
  
 </ul>
