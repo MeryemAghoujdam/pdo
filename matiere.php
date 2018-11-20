@@ -13,15 +13,7 @@ and open the template in the editor.
         <title></title>
         <script src="script/matiere.js" type="text/javascript"></script>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
-        <style>
-            /*
-            fieldset{
-                border:2px solid green;
-                -moz-border-radius:8px;
-                -webkit-border-radius:8px;	
-                 border-radius:8px;
-            }*/
-        </style>
+       
         
 
     </head>
