@@ -11,5 +11,6 @@
     <li><a href="indexFormation.php">Gestion des formations</a></li> 
     <li><a href="matiere.php">Gesqtion des matières</a></li>
     <li><a href="tournoi.php">Gestion des Tournois</a></li>
+    <li><a href="hotel.php">Gestion des Hotel</a></li>
  
 </ul>

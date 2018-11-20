@@ -6,7 +6,7 @@
 class HotelService implements IDao {
     private $connexion;
     function __construct() {
-        $this->connexion = new hotelConnexion();
+        $this->connexion = new Connexion();
     }
 
     public function create($o) {

@@ -311,6 +311,43 @@ ALTER TABLE `tournoi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
+CREATE TABLE `hotel` (
+  `ID` int(11) NOT NULL,
+  `Client` varchar(30) NOT NULL,
+  `Num_Chambre` int(11) NOT NULL,
+  `Nbr_Jours` int(11) NOT NULL,
+  `Prix_Louer` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hotel`
+--
+
+INSERT INTO `hotel` (`ID`, `Client`, `Num_Chambre`, `Nbr_Jours`, `Prix_Louer`) VALUES
+(1, 'Hamza', 10, 4, 800),
+(2, 'Youssef', 20, 2, 400),
+(3, 'Amine', 30, 7, 1300);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `hotel`
+--
+ALTER TABLE `hotel`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `hotel`
+--
+ALTER TABLE `hotel`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
