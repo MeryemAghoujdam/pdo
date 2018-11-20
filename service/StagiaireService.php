@@ -41,6 +41,13 @@ class StagiaireService implements IDao {
         else
             return 0;
     }
+    
+    public function findAllApi() {
+        $query = "select * from Stagiaire";
+        $req = $this->connexion->getConnexion()->query($query);
+        $s= $req->fetchAll(PDO::FETCH_OBJ);
+        return $s;
+    }
 
     public function findById($id) {
         $query = "select * from Stagiaire where id =?";
