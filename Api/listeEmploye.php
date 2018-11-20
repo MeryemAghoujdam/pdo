@@ -1,9 +1,9 @@
 <?php
 
 chdir('..');
-include_once 'service/EcoleService.php';
+include_once 'service/EmployeService.php';
 
 header('Content-type: application/json');
 
-$ss = new EcoleService();
+$ss = new EmployeService();
 echo json_encode($ss->findAllApi());
