@@ -33,6 +33,7 @@ and open the template in the editor.
                     
                 <table>
                      
+                    
                     <tr>
                         <td>Nom: </td>
                         <td><input type="text" id="nom" name="nom"></td>
