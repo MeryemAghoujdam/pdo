@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  sam. 17 nov. 2018 à 15:51
+-- Généré le :  lun. 19 nov. 2018 à 23:52
 -- Version du serveur :  10.1.36-MariaDB
--- Version de PHP :  7.2.10
+-- Version de PHP :  7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,28 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `php1`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `employe`
---
-
-CREATE TABLE `employe` (
-  `id` int(11) NOT NULL,
-  `cin` varchar(10) DEFAULT NULL,
-  `nom` varchar(30) DEFAULT NULL,
-  `prenom` varchar(30) DEFAULT NULL,
-  `tele` varchar(30) DEFAULT NULL,
-  `salaire` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `employe`
---
-
-INSERT INTO `employe` (`id`, `cin`, `nom`, `prenom`, `tele`, `salaire`) VALUES
-(2, 'EE1414', 'BOUSHAB', 'ZINAB', '0632563246', 632563246);
 
 -- --------------------------------------------------------
 
@@ -68,19 +46,7 @@ CREATE TABLE `marque` (
   `id` int(11) NOT NULL,
   `nom` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- --------------------------------------------------------
 
---
--- Structure de la table `livre`
---
-CREATE TABLE `livre` (
-  `id` int(11) NOT NULL,
-  `titre` varchar(100) NOT NULL,
-     `nbpage` int NOT NULL ,
-     `auteur` varchar(100)NOT NULL,
-      `prix` float NOT NULL 
- 
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --
 -- Déchargement des données de la table `marque`
 --
@@ -110,21 +76,89 @@ INSERT INTO `marque` (`id`, `nom`) VALUES
 (23, 'aa'),
 (24, 'aa'),
 (25, 'aa');
--- Déchargement des données de la table `livre`
-INSERT INTO `marque` (`id`, `nom`) VALUES
-(2, 't1',100,'A1',1876),
-(3, 't2',200,'A2',1098),
-(4, 't3',300,'A3',1092),
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `profil`
+--
+
+CREATE TABLE `profil` (
+  `id` int(11) NOT NULL,
+  `code` varchar(15) NOT NULL,
+  `libelle` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `randonnee`
+--
+
+CREATE TABLE `randonnee` (
+  `id` int(11) NOT NULL,
+  `direction` varchar(50) NOT NULL,
+  `dateDepart` date NOT NULL,
+  `dateRetour` date NOT NULL,
+  `prix` float NOT NULL,
+  `nombre_participants` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `randonnee`
+--
+
+INSERT INTO `randonnee` (`id`, `direction`, `dateDepart`, `dateRetour`, `prix`, `nombre_participants`) VALUES
+(1, 'Toubqal', '2018-11-24', '2018-11-26', 1300, 21);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `restaurant`
+--
+
+CREATE TABLE `restaurant` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(30) NOT NULL,
+  `nbrtable` int(11) NOT NULL,
+  `adresse` varchar(30) NOT NULL,
+  `tele` varchar(30) NOT NULL,
+  `nbretoile` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `restaurant`
+--
+
+INSERT INTO `restaurant` (`id`, `nom`, `nbrtable`, `adresse`, `tele`, `nbretoile`) VALUES
+(2, 'nn', 6, 'bhjh', '55566999', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `stagiaire`
+--
+
+CREATE TABLE `stagiaire` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(30) NOT NULL,
+  `prenom` varchar(30) NOT NULL,
+  `daten` date NOT NULL,
+  `tele` varchar(10) NOT NULL,
+  `email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `stagiaire`
+--
+
+INSERT INTO `stagiaire` (`id`, `nom`, `prenom`, `daten`, `tele`, `email`) VALUES
+(7, 'Waziz', 'Moussaab', '1997-02-20', '0687862800', 'moussaabwaziz@gmail.com'),
+(8, 'Nadifi', 'Soufiane', '1999-12-03', '0666085943', 'iamsoufian@gmail.com');
 
 --
 -- Index pour les tables déchargées
 --
-
---
--- Index pour la table `employe`
---
-ALTER TABLE `employe`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `machine`
@@ -134,24 +168,38 @@ ALTER TABLE `machine`
   ADD KEY `marque` (`marque`);
 
 --
--- Index pour la table `livre`
---
-ALTER TABLE `livre`
-  ADD PRIMARY KEY (`id`);
---
 -- Index pour la table `marque`
 --
 ALTER TABLE `marque`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `profil`
+--
+ALTER TABLE `profil`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `randonnee`
+--
+ALTER TABLE `randonnee`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `restaurant`
+--
+ALTER TABLE `restaurant`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `stagiaire`
+--
+ALTER TABLE `stagiaire`
+  ADD PRIMARY KEY (`id`);
+
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
-
---
--- AUTO_INCREMENT pour la table `employe`
---
-ALTER TABLE `employe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `machine`
@@ -165,10 +213,30 @@ ALTER TABLE `machine`
 ALTER TABLE `marque`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
---- AUTO_INCREMENT pour la table `livre`
 --
-ALTER TABLE `livre`
+-- AUTO_INCREMENT pour la table `profil`
+--
+ALTER TABLE `profil`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `randonnee`
+--
+ALTER TABLE `randonnee`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `restaurant`
+--
+ALTER TABLE `restaurant`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `stagiaire`
+--
+ALTER TABLE `stagiaire`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- Contraintes pour les tables déchargées
 --
@@ -180,6 +248,82 @@ ALTER TABLE `machine`
   ADD CONSTRAINT `fk_machine_marche` FOREIGN KEY (`marque`) REFERENCES `marque` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
+
+
+
+--
+-- Table structure for table `matiere`
+--
+
+CREATE TABLE `matiere` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(30) NOT NULL,
+  `coef` int(11) NOT NULL,
+  `NombreHeures` int(11) NOT NULL,
+  `abreviation` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `matiere`
+--
+ALTER TABLE `matiere`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `matiere`
+--
+ALTER TABLE `matiere`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+CREATE TABLE `hotel` (
+  `ID` int(11) NOT NULL,
+  `Client` varchar(30) NOT NULL,
+  `Num_Chambre` int(11) NOT NULL,
+  `Nbr_Jours` int(11) NOT NULL,
+  `Prix_Louer` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hotel`
+--
+
+INSERT INTO `hotel` (`ID`, `Client`, `Num_Chambre`, `Nbr_Jours`, `Prix_Louer`) VALUES
+(1, 'Hamza', 10, 4, 800),
+(2, 'Youssef', 20, 2, 400),
+(3, 'Amine', 30, 7, 1300),
+(6, 'Meryem', 40, 15, 5000);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `hotel`
+--
+ALTER TABLE `hotel`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `hotel`
+--
+ALTER TABLE `hotel`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
