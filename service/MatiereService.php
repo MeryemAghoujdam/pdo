@@ -14,15 +14,16 @@
 //chdir("../");
 include_once 'beans/Matiere.php';
 include_once 'dao/IDao.php';
-include_once 'connexion/MatiereConnexion.php';
+include_once 'connexion/Connexion.php';
 
 class MatiereService implements IDao {
     //put your code here
     private $cnx;
     function __construct() {
-        $this->cnx = new MatiereConnexion();
+        $this->cnx = new Connexion();
     }
 
+    
     public function create($o) {
         $query = "Insert Into Matiere (nom,coef,NombreHeures,abreviation) Values(?,?,?,?)";
         $r = $this->cnx->getConnexion()->prepare($query);
