@@ -15,7 +15,7 @@ function f(a, b) {
     
     console.log("Vous avez cliqué sur modifier");
 
-} 
+}
 
 
 function stagiaireModification(_id,_nom,_prenom,_daten,_tele,_email) {
