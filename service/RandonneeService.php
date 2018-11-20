@@ -46,8 +46,13 @@ class RandonneeService implements IDao{
         $v=$req->fetch(PDO::FETCH_OBJ);
         $Randonnee=new Randonnee($v->id,$v->direction,$v->dateDepart,$v->dateRetour,$v->prix,$v->nombre_participants);
         return $Randonnee;
-        
-       
+    }
+    
+    public function findAllApi() {
+        $query = "select * from randonnee";
+        $req = $this->connexion->getConnexion()->query($query);
+        $R= $req->fetchAll(PDO::FETCH_OBJ);
+        return $R;
     }
 
     public function update($o) {
