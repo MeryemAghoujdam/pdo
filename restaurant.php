@@ -13,7 +13,11 @@ include_once 'service/RestaurantService.php';
         <script src="script/script.js"></script>
     </head> 
     <body>
-        <form method="GET" action="controller/GestionRestaurant.php">
+        <?php
+        include_once 'menu.php';
+        ?>
+        <div style="margin-left:20%;padding:1px 16px;height:1000px;">
+            <form method="GET" action="controller/GestionRestaurant.php">
                 <fieldset>
                     <legend id="legend1">Ajouter Restaurant</legend>
                     <table id="gestion" border="0">
@@ -88,6 +92,7 @@ include_once 'service/RestaurantService.php';
                     </tbody>
                 </table>
             </fieldset>
+        </div>
     </body>
 
 </html>
