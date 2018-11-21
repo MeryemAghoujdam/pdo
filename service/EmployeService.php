@@ -56,7 +56,7 @@ class EmployeService implements IDao {
 
     public function update($o) {
          $query = "UPDATE `employe` SET `nom`=?,`prenom`=?,`tele`=?,`salaire`=? WHERE `id`=?";
-        $req = $this->connexion->getConnexion()->prepare($query);
+         $req = $this->connexion->getConnexion()->prepare($query);
          $req->execute(array($o->getCin(),$o->getNom(),$o->getPrenom(),$o->getTele(),$o->getTele(),$o->getId())) or die('Error');
     
     }

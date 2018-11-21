@@ -1,8 +1,5 @@
 <html>
     <head>
-        <?php
-            if (session_status()==PHP_SESSION_NONE) {
-        ?>
         <title>Login : Gestion Employé</title>
         <script src="script/index.js" type="text/javascript"></script>
         <link href="css/indexStyle.css" rel="stylesheet" type="text/css"/>
@@ -17,11 +14,6 @@
                 </form>
             </div>
         <p id="ErrMSG"></p>
-        <?php
-            }else if(session_status()==PHP_SESSION_ACTIVE){
-                header("Location: pages/home.php");
-            }
-        ?>
     </body>
 </html>
 
