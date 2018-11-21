@@ -7,5 +7,5 @@ header('Content-type: application/json');
 
 $im = new ImmeubleService();
 
-echo json_encode($im->findAllApi());
+echo json_encode($im->findAllApi()); 
 

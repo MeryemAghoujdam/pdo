@@ -9,4 +9,3 @@ $im = new ImmeubleService();
 $im->create(new Immeuble($id, $adresse, $nbrappartement, $nomPropriétaire, $entrepriseConstruction, $dateConstruction));
 
 echo 'True';
-

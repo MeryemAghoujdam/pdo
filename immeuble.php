@@ -8,7 +8,7 @@ and open the template in the editor.
 include_once 'service/ImmeubleService.php';
 ?>
 
-<html>
+<html> 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +19,11 @@ include_once 'service/ImmeubleService.php';
 </head>
 <body>
     <body>
+        <?php
+        include_once'menu.php'
+        ?>
+        <div style="margin-left:20%;padding:1px 16px;height:1000px;">
+            
         <form method="GET" action="controller/GestionImmeuble.php">
             <fieldset>
                 <legend id="legend1">Ajouter Immeuble</legend>
@@ -89,11 +94,12 @@ include_once 'service/ImmeubleService.php';
                         </tr>
                         <?php
                     }
-                    }
-                    ?>
+                  }
+                ?>
                 </tbody>
             </table>
 
         </fieldset>
+     </div>
 </body>
 </html>
