@@ -13,6 +13,10 @@ include_once 'service/moduleService.php';
 
 
     <body>
+         <?php
+        include_once 'menu.php';
+        ?>
+        <div style="margin-left: 20% ; padding: 1px 16px ; height: 1000px ;">
         <form method="GET" action="controller/GestionModule.php">
             <fieldset>
                
@@ -92,6 +96,7 @@ include_once 'service/moduleService.php';
             </table>
 
         </fieldset>
+        </div>
 </body>
 </html>
         
