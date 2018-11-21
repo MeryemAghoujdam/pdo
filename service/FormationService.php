@@ -52,6 +52,12 @@ class FormationService implements IDao {
         return $formation;
     }
 
+    public function findAllApi() {
+        $query = "select * from Formation";
+        $req = $this->connexion->getConnexion()->query($query);
+        $f= $req->fetchAll(PDO::FETCH_OBJ);
+        return $f;
+    }
     public function update($o) {
         $query = "update Formation set Nom=?,DateDep=?,DateFin=?,Location=? where Id=?";
         $req= $this->connexion->getConnexion()->prepare($query);
