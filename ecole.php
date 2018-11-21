@@ -12,6 +12,11 @@ and open the template in the editor.
         <title>Gestion des Voiture</title>
     </head>
     <body>
+        
+         <?php
+        include_once 'menu.php';
+        ?>
+        <div style="margin-left:20%;padding:1px 16px;height:1000px;">
          <form id="form" method="GET" action="EcoleConroller.php">
                 <fieldset>
                  <legend>Gestion des Ecoles</legend>
@@ -89,5 +94,6 @@ and open the template in the editor.
             </table>
             <?php 
             }?>
+        </div>
     </body>
 </html>

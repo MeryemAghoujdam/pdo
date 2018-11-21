@@ -36,8 +36,8 @@ class EcoleService implements IDao{
         $req = $this->connexion->getConnexion()->prepare($query);
         $req->execute(array($o->getId())) or die("Delete failed ");
     }
-
-    public function findAll() {
+    
+      public function findAll() {
         
         $query = "select * from Ecole";
         $req = $this->connexion->getConnexion()->query($query);
@@ -48,6 +48,13 @@ class EcoleService implements IDao{
              $ecole [] = new Ecole($e->$id, $e->$nom, $e->$capacite, $e->$adresse, $e->$nombreDeSalle, $e->$numTel);
         }
         return $ecole;
+    }
+
+     public function findAllApi() {
+        $query = "select * from Ecole";
+        $req = $this->connexion->getConnexion()->query($query);
+        $ec= $req->fetchAll(PDO::FETCH_OBJ);
+        return $ec;
     }
 
     public function findById($id) {
