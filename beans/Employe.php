@@ -11,23 +11,31 @@
  *
  * @author asus
  */
+include_once 'Profil.php';
 class Employe {
-    //put your code here
-    //put your code here
     private $id;
-    private $cin;
     private $nom;
     private $prenom;
     private $tele;
     private $salaire;
-    
-   
-    function getId() {
-        return $this->id;
+    private $Login;
+    private $password;
+    private $profile;
+          
+    function __construct($id, $nom, $prenom, $tele, $salaire, $Login, $password, $profile) {
+        $this->id = $id;
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->tele = $tele;
+        $this->salaire = $salaire;
+        $this->Login = $Login;
+        $this->password = $password;
+        $this->profile = $profile;
     }
 
-    function getCin() {
-        return $this->cin;
+    
+    function getId() {
+        return $this->id;
     }
 
     function getNom() {
@@ -47,9 +55,6 @@ class Employe {
     function getSalaire() {
         return $this->salaire;
     }
-    function setCin($cin) {
-        $this->cin = $cin;
-    }
 
     function setNom($nom) {
         $this->nom = $nom;
@@ -68,14 +73,28 @@ class Employe {
     function setSalaire($salaire) {
         $this->salaire = $salaire;
     }
+    function getLogin() {
+        return $this->Login;
+    }
 
-    function __construct($id, $cin, $nom, $prenom, $tele, $salaire) {
-        $this->id = $id;
-        $this->cin = $cin;
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        $this->tele = $tele;
-        $this->salaire = $salaire;
+    function getPassword() {
+        return $this->password;
+    }
+
+    function getProfile() {
+        return $this->profile;
+    }
+
+    function setLogin($Login) {
+        $this->Login = $Login;
+    }
+
+    function setPassword($password) {
+        $this->password = $password;
+    }
+
+    function setProfile($profile) {
+        $this->profile = $profile;
     }
 
 
