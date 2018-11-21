@@ -54,6 +54,13 @@ class RestaurantService implements IDao{
         return $restaurant;
     }
     
+    public function findAllApi() {
+        $query = "select * from Restaurant";
+        $req = $this->connexion->getConnexion()->query($query);
+        $s= $req->fetchAll(PDO::FETCH_OBJ);
+        return $s;
+    }
+    
     public function update($o) {
         $query = "UPDATE `restaurant` SET `nom`=?,`nbrtable`=?,`adresse`=?,`tele`=?,`nbretoile`=? WHERE `id`=?";
         $req = $this->connexion->getConnexion()->prepare($query);
