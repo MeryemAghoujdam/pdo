@@ -13,19 +13,3 @@ window.onload = function (){
         Msg.textContent = "Login ou mot de passe erroné";
     }
 }
-function connectionValidation(){
-    var entries = document.querySelectorAll(".loginInfo"),
-        form = document.getElementById("connectionFrom"),
-        bool = true;
-    for (var i = 0; i < entries.length; i++) {
-        if(entries[i].value==""){
-            alert("Saisissez Login et mot de passe!");
-            bool=false;
-            break;
-        }
-    }
-    if(bool){
-        form.action="pages/home.php"
-        form.method="POST";
-    }
-}

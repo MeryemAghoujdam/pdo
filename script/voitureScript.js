@@ -23,3 +23,25 @@ function LoadToInputs(Id,Serie,Marque,Prix,Puissance,Type){
     type.value = Type;
     puiss.value=Puissance;
 }
+function LoadToInputs(Id,Nom,Prenom,Tel,Salaire,Login,Pass,Profile){
+    var id = document.getElementById("id"),
+        nom = document.getElementById("Nom"),
+        prenom = document.getElementById("Prenom"),
+        tel = document.getElementById("Tel"),
+        sal = document.getElementById("Sal"),
+        login = document.getElementById("Login"),
+        pass = document.getElementById("Pass"),
+        profil = document.getElementById("Profile"),
+        ops = document.getElementById("ops"),
+        sub = document.getElementById("sub");
+    sub.value="Modifier";
+    ops.value="update";
+    id.value=Id;
+    nom.value=Nom;
+    prenom.value=Prenom;
+    tel.value=Tel;
+    sal.value = Salaire;
+    login.value=Login;
+    pass.value=Pass;
+    profil.value=Profile;
+}

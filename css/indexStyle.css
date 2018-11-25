@@ -65,10 +65,6 @@ body{background-color: #ecf0f1;}
     height: 64px;
     background-color: #3498db;
     overflow: hidden;
-    position: fixed;
-    z-index: 5;
-    top: 0;
-    left: 0;
 }
 .menu{
     color: #FFFFFF;
@@ -80,6 +76,21 @@ body{background-color: #ecf0f1;}
     border: none;
     cursor: pointer;
     outline: none;
+    display: inline;
+}
+.USER{
+    color: #FFFFFF;
+    font-size: 24px;
+    background-color: transparent;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    font-family: "Roboto";
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: inline;
+    float: right;
 }
 .menu:hover{
     background-color: #2980b9;
@@ -87,23 +98,29 @@ body{background-color: #ecf0f1;}
 .MenuBlock{
     width: 25%;
     min-width: fit-content;
-    position: fixed;
     height: 0px;
     background-color: #2980b9;
-    top: 64px;
-    left: 0;
     transition-duration: 1s;
     overflow: hidden;
+    float: left;
+    border: none;
+    position: fixed
 }
 .menuItem{
     color: #FFFFFF;
     font-size: 32px;
     background-color: transparent;
     font-family: "OpenSans";
-    text-align: center;
+    text-indent: 16px;
     padding: 16px;
     cursor: pointer;
+    display: block;
+    text-decoration: none;
 }
 .menuItem:hover{
-    background-color: #34495e;
+    background-color: #38749c;
+}
+#webView{
+    width: 100%;
+    border: none;
 }

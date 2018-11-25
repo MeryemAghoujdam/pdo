@@ -12,7 +12,7 @@ class EmployeService implements IDao {
     }
     
     public function create($o) {
-        $query = "INSERT INTO employe VALUES (NULL,?,?,?,?,?,?,?)";
+        $query = "insert into employe values (?,?,?,?,?,?,?)";
         $req = $this->connexion->getConnexion()->prepare($query);
         $req->execute(array($o->getNom(),$o->getPrenom(),$o->getTele(),$o->getSalaire(),$o->getLogin(),$o->getPassword(),$o->getProfile()->getId())) or die('Error');
     }
@@ -29,7 +29,7 @@ class EmployeService implements IDao {
         $s= $req->fetchAll(PDO::FETCH_OBJ);
         $employes = array();
         foreach ($s as $v){
-            $employe [] = new Employe($v->id,$v->nom,$v->prenom,$v->tele,$v->salaire,$v->login,$v->pass,new Profil($v->profilId,$v->profileCode,$v->libell));
+            $employe [] = new Employe($v->id,$v->nom,$v->prenom,$v->tele,$v->salaire,$v->login,$v->pass,new Profil($v->profilid,$v->profilCode,$v->libell));
         }
         return $employe;
     }
@@ -55,9 +55,9 @@ class EmployeService implements IDao {
     }
 
     public function update($o) {
-         $query = "UPDATE `employe` SET `nom`=?,`prenom`=?,`tele`=?,`salaire`=? WHERE `id`=?";
+         $query = "UPDATE `employe` SET `nom`=?,`prenom`=?,`tele`=?,`salaire`=?,`login`=?,`pass`=?,`profilid`=?  WHERE `id`=?";
          $req = $this->connexion->getConnexion()->prepare($query);
-         $req->execute(array($o->getCin(),$o->getNom(),$o->getPrenom(),$o->getTele(),$o->getTele(),$o->getId())) or die('Error');
+         $req->execute(array($o->getNom(),$o->getPrenom(),$o->getTele(),$o->getSalaire(),$o->getLogin(),$o->getPassword(),$o->getProfile()->getId(),$o->getId())) or die('Error');
     
     }
 
