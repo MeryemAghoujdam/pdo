@@ -7,7 +7,7 @@ extract($_GET);
 $ES = new EmployeService();
 if (isset($ops)) {
     if ($ops == "insert") {
-        $emp = new Employe("", $nom, $prenom, $tel, $salaire, $login, $password, new Profil($profile,"",""));
+        $emp = new Employe(0, $nom, $prenom, $tel, $salaire, $login, $password, new Profil($profile,"",""));
         $ES->create($emp);
         header("Location:manage.php");
     } else if ($ops == "update") {

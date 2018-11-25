@@ -53,7 +53,7 @@
                 ?>
             <div class="menuItem" onclick="changeIframSrc('manage.php')"><i class="fas fa-users"></i>&nbsp;&nbsp;Gérer les Comptes</div>
             <?php } else { ?>
-                <div class="menuItem"><i class="fas fa-list-ol"></i>&nbsp;&nbsp;Les employés</div>
+                <div class="menuItem" onclick="changeIframSrc('manage.php')"><i class="fas fa-list-ol"></i>&nbsp;&nbsp;Les employés</div>
             <?php } ?>
             <a class="menuItem" href="../index.php?state=-1"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Quitter</a>
         </div>

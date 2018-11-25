@@ -52,8 +52,10 @@ $user = $_SESSION["USER"];
                     <th>Login</th>
                     <th>Mot de passe</th>
                     <th>Profil</th>
+                    <?php if($user->getProfile()->getLibelle() != "Employe"){ ?>
                     <th>Modifier</th>
                     <th>Supprimer</th>
+                    <?php }?>
                 </tr>
             </thead>
             <tbody>
@@ -67,9 +69,9 @@ $user = $_SESSION["USER"];
                     <td><?php echo $v->getTele() ?></td>
                     <td><?php echo $v->getSalaire() ?></td>
                     <td><?php echo $v->getLogin() ?></td>
-                    <td><?php echo $v->getPassword() ?></td>
+                    <td><?php  if($v->getProfile()->getId()>=$user->getProfile()->getId()){ echo $v->getPassword(); }?></td>
                     <td><?php echo $v->getProfile()->getLibelle() ?></td>
-                    <?php if($user->getProfile()->getLibelle() != "Employe"){ ?>
+                    <?php if($user->getProfile()->getLibelle() != "Employe"&&$v->getProfile()->getId()>=$user->getProfile()->getId()){ ?>
                     <td><a class="BTN update" onclick="LoadToInputs('<?php echo $v->getId() ?>', '<?php echo $v->getNom() ?>', '<?php echo $v->getPrenom() ?>', '<?php echo $v->getTele() ?>', '<?php echo $v->getSalaire() ?>', '<?php echo $v->getLogin() ?>', '<?php echo $v->getPassword() ?>', '<?php echo $v->getProfile()->getId() ?>')">Modifier</a></td>
                     <?php if($user->getId()!=$v->getId()){?>
                     <td><a class="BTN delete" href="Controller.php?ops=delete&id=<?php echo $v->getId() ?>">supprimer</a></td>
