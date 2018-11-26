@@ -18,6 +18,32 @@ function f(a, b) {
 }
 
 
+function entrepriseModification(_id,_nom,_adresse,_nombreDeSalarie,_numTel) {
+
+    var legend = document.getElementById("legend1");
+    legend.innerText = "Modifier Profil";
+    
+    var id = document.getElementById("id");
+    id.value = _id;
+    var nom = document.getElementById("nom");
+    nom.value = _nom;
+    
+    var adresse = document.getElementById("adresse");
+    adresse.value = _adresse;
+    
+    var nombreDeSalarie = document.getElementById("nombreDeSalarie");
+    nombreDeSalarie.value = _nombreDeSalarie;
+    
+    var numTel = document.getElementById("numTel");
+    numTel.value = _numTel;
+    var save = document.getElementById("save");
+    save.value ="Modifier";
+    
+    var ops = document.getElementById("ops");
+    ops.value = "update";
+
+}
+
 function gestiontournoiup(idt,typ,nm,prm,dt,scr) {
     var id=document.getElementById("idtourn");
     
